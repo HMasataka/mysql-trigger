@@ -18,4 +18,4 @@ CREATE TRIGGER trigger_name
   ON User
   FOR EACH ROW
   INSERT INTO DeletedUser (id, name, created_at, updated_at)
-  VALUES ('Insert', 'name', NOW(), NOW());
+  VALUES (OLD.id, OLD.name, OLD.created_at, OLD.updated_at);
